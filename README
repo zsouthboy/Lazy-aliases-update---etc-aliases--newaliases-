@@ -1,0 +1,19 @@
+Useful for your own systems where you know what you're doing.
+
+Script is tested under Python 2.6 in Ubuntu 10.10 and 10.04, 32-bit, 
+with Postfix.
+
+
+Why does this exist?
+I got sick of having to manually edit /etc/aliases on my VPS.
+I give each new site a different email address, so that if they
+sell / leak my email address, it's obvious who did it.
+
+I'm sure others have a VPS and do the same thing.
+
+This script appends your alias (with date and option explanation)
+to the end of /etc/aliases, and invokes `newaliases`to reinitalize
+the database (so the new address takes effect immediately)
+
+Has reasonable checks (for root, for example) and shouldn't blow away
+your aliases file(opens in append mode only), but use at your own risk.
